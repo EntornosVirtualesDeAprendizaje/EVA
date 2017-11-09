@@ -31,13 +31,14 @@
   <div class="login-box-body">
     <p class="login-box-msg">Inicie Sesion para poder usar el sistema</p>
 
-    <form action="../../index2.html" method="post">
+    <form method="POST" action="/auth/login">
+      {!! csrf_field() !!}
       <div class="form-group has-feedback">
-        <input type="email" class="form-control" placeholder="Email">
+        <input type="email" name="email"  value="{{ old('email') }}" class="form-control" placeholder="Email">
         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
       </div>
       <div class="form-group has-feedback">
-        <input type="password" class="form-control" placeholder="Password">
+        <input type="password" name="password" id="password" class="form-control" placeholder="Password">
         <span class="glyphicon glyphicon-lock form-control-feedback"></span>
       </div>
       <div class="row">
@@ -46,7 +47,7 @@
         </div>
       </div>
     </form>
-    <a href="register.html" class="text-center">Registrar a un nuevo usuario</a>
+    <a href="{{ url('auth/register') }}" class="text-center">Registrar a un nuevo usuario</a>
   </div>
 </div>
 <!-- jQuery 3 -->
