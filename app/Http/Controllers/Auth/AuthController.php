@@ -20,7 +20,16 @@ class AuthController extends Controller
     | a simple trait to add these behaviors. Why don't you explore it?
     |
     */
+    public function getLogin()
+    {
+        return view('auth.login');
+    }
 
+    public function postLogin()
+    {
+        //this section verifies ussername and password and return to system dashboard.
+    }
+    
     use AuthenticatesAndRegistersUsers, ThrottlesLogins;
 
     /**

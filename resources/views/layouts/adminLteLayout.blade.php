@@ -271,7 +271,6 @@
   </aside>
         <div class="container">
             @yield('content')
-            
         </div>
         <footer class="main-footer">
             <div class="pull-right hidden-xs">
