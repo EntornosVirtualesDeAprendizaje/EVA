@@ -17,6 +17,7 @@ Route::get('/','MainController@welcomePage');
 Route::get('auth/login', 'Auth\AuthController@getLogin');
 Route::post('auth/login', 'Auth\AuthController@postLogin');
 
+Route::resource('CrearCurso','CrearCurso\\CrearCursoController');
 //Route::get('/resetPassword','MainController@resetPassword');
 
 //Route::get('auth/logout', 'Auth\AuthController@getLogout');

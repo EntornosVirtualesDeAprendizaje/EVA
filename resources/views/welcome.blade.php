@@ -2,524 +2,390 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8">
-  <title>Imperial Boootstrap Template</title>
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-  <meta content="" name="keywords">
-  <meta content="" name="description">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Sistema de Evaluaciones</title>
+    <!--meta name="description" content="Free Bootstrap Theme by BootstrapMade.com">
+  <meta name="keywords" content="free website templates, free bootstrap themes, free template, free bootstrap, free website template"-->
 
-  <!-- Facebook Opengraph integration: https://developers.facebook.com/docs/sharing/opengraph -->
-  <meta property="og:title" content="">
-  <meta property="og:image" content="">
-  <meta property="og:url" content="">
-  <meta property="og:site_name" content="">
-  <meta property="og:description" content="">
+   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open+Sans|Candal|Alegreya+Sans">
+    <link rel="stylesheet" type="text/css" href="{{URL::to('assets/Mentor/css/font-awesome.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::to('assets/Mentor/css/bootstrap.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::to('assets/Mentor/css/imagehover.min.css')}}">
+    <link rel="stylesheet" type="text/css" href="{{URL::to('assets/Mentor/css/style.css')}}">
 
-  <!-- Twitter Cards integration: https://dev.twitter.com/cards/  -->
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:site" content="">
-  <meta name="twitter:title" content="">
-  <meta name="twitter:description" content="">
-  <meta name="twitter:image" content="">
-
-  <!-- Place your favicon.ico and apple-touch-icon.png in the template root directory -->
-  <link href="{{URL::to('assets/favicon.ico')}}" rel="shortcut icon">
-
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,700,700i|Raleway:300,400,500,700,800" rel="stylesheet">
-
-  <!-- Bootstrap CSS File -->
-  <link href="{{URL::to('assets/Imperial/lib/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
-
-  <!-- Libraries CSS Files -->
-  <link href="{{URL::to('assets/Imperial/lib/font-awesome/css/font-awesome.min.css')}}" rel="stylesheet">
-  <link href="{{URL::to('assets/Imperial/lib/animate-css/animate.min.css')}}" rel="stylesheet">
-
-  <!-- Main Stylesheet File -->
-  <link href="{{URL::to('assets/Imperial/css/style.css')}}" rel="stylesheet">
-
-  <!-- =======================================================
-    Theme Name: Imperial
-    Theme URL: https://bootstrapmade.com/imperial-free-onepage-bootstrap-theme/
-    Author: BootstrapMade.com
-    Author URL: https://bootstrapmade.com
-  ======================================================= -->
 </head>
 
 <body>
-  <div id="preloader"></div>
+    <!--Navigation bar-->
+    <nav class="navbar navbar-default navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+                <a class="navbar-brand" href="index.html">EVA<span></span></a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#feature">Informacion</a></li>
+                    <li><a href="#organisations">Evaluaciones</a></li>
+                    <li><a href="#courses">Aulas</a></li>
 
-  <!--==========================
-  Hero Section
-  ============================-->
-  <section id="hero">
-    <div class="hero-container">
-      <div class="wow fadeIn">
-        <div class="hero-logo">
-          <img class="" src="img/logo.png" alt="Imperial">
+                    <li><a href="#" data-target="#login" data-toggle="modal">Iniciar Sesion</a></li>
+                    <!--li class="btn-trial"><a href="#footer">Free Trail</a></li-->
+                </ul>
+            </div>
         </div>
+    </nav>
+    <!--/ Navigation bar-->
+    <!--Modal box-->
+    <div class="modal fade" id="login" role="dialog">
+        <div class="modal-dialog modal-sm">
 
-        <h1>Welcome to Imperial studios</h1>
-        <h2>We create <span class="rotating">beautiful graphics, functional websites, working mobile apps</span></h2>
-        <div class="actions">
-          <a href="#about" class="btn-get-started">Conocenos</a>
-          <a href="{{ url('auth/login') }}" class="btn-services">Iniciar Sesion</a>
+            <!-- Modal content no 1-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title text-center form-title">Login</h4>
+                </div>
+                <div class="modal-body padtrbl">
+
+                    <div class="login-box-body">
+                        <p class="login-box-msg">Inicia tu sesion</p>
+                        <div class="form-group">
+                            <form name="" id="loginForm">
+                                <div class="form-group has-feedback">
+                                    <!-- username -->
+                                    <input class="form-control" placeholder="Nombre Usuario" id="loginid" type="text" autocomplete="off" />
+                                    <span style="display:none;font-weight:bold; position:absolute;color: red;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginid"></span>
+                                    <!---Alredy exists  ! -->
+                                    <span class="fa fa-user form-control-feedback"></span>
+                                </div>
+                                <div class="form-group has-feedback">
+                                    <!-- password -->
+                                    <input class="form-control" placeholder="Password" id="loginpsw" type="password" autocomplete="off" />
+                                    <span style="display:none;font-weight:bold; position:absolute;color: grey;position: absolute;padding:4px;font-size: 11px;background-color:rgba(128, 128, 128, 0.26);z-index: 17;  right: 27px; top: 5px;" id="span_loginpsw"></span>
+                                    <!---Alredy exists  ! -->
+                                    <span class="fa fa-key form-control-feedback"></span>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12">
+                                        <div class="checkbox icheck">
+                                            <label>
+                                <input type="checkbox" id="loginrem" > Recordar
+                              </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-xs-12">
+                                        <button type="button" class="btn btn-green btn-block btn-flat" onclick="userlogin()">Inicia Sesion</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
-      </div>
     </div>
-  </section>
-
-  <!--==========================
-  Header Section
-  ============================-->
-  <header id="header">
-    <div class="container">
-
-      <div id="logo" class="pull-left">
-        <a href="#hero"><img src="img/logo.png" alt="" title="" /></img></a>
-        <!-- Uncomment below if you prefer to use a text image -->
-        <!--<h1><a href="#hero">Header 1</a></h1>-->
-      </div>
-
-      <nav id="nav-menu-container">
-        <ul class="nav-menu">
-          <li class="menu-active"><a href="#hero">Home</a></li>
-          <li><a href="#about">About Us</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#portfolio">Portfolio</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a href="#team">Team</a></li>
-          <li class="menu-has-children"><a href="">Drop Down</a>
-            <ul>
-              <li><a href="#">Drop Down 1</a></li>
-              <li><a href="#">Drop Down 3</a></li>
-              <li><a href="#">Drop Down 4</a></li>
-              <li><a href="#">Drop Down 5</a></li>
-            </ul>
-          </li>
-          <li><a href="{{ url('auth/login') }}">Iniciar Sesion</a></li>
-        </ul>
-      </nav>
-      <!-- #nav-menu-container -->
+    <!--/ Modal box-->
+    <!--Banner-->
+    <div class="banner">
+        <div class="bg-color">
+            <div class="container">
+                <div class="row">
+                    <div class="banner-text text-center">
+                        <div class="text-border">
+                            <h2 class="text-dec">Evaluaciones En Linea</h2>
+                        </div>
+                        <div class="intro-para text-center quote">
+                            <p class="big-text">Evaluaciones en linea y apoyo a estudiantes</p>
+                            <p class="small-text"><br></p>
+                            <a href="#feature" class="btn get-quote">INICIAR NAVEGACION</a>
+                        </div>
+                        <a href="#feature" class="mouse-hover">
+                            <div class="mouse"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-  </header>
-  <!-- #header -->
-
-  <!--==========================
-  About Section
-  ============================-->
-  <section id="about">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">About Us</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam</p>
-        </div>
-      </div>
-    </div>
-    <div class="container about-container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-6 col-md-push-6 about-content">
-          <h2 class="about-title">We provide great services and ideass</h2>
-          <p class="about-text">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-            in reprehenderit in voluptate
-          </p>
-          <p class="about-text">
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-            id est laborum
-          </p>
-          <p class="about-text">
-            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim
-            id est laborum
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Services Section
-  ============================-->
-  <section id="services">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Our Services</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-desktop"></i></div>
-          <h4 class="service-title"><a href="">Lorem Ipsum</a></h4>
-          <p class="service-description">Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-bar-chart"></i></div>
-          <h4 class="service-title"><a href="">Dolor Sitema</a></h4>
-          <p class="service-description">Minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat tarad limino ata</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-paper-plane"></i></div>
-          <h4 class="service-title"><a href="">Sed ut perspiciatis</a></h4>
-          <p class="service-description">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-photo"></i></div>
-          <h4 class="service-title"><a href="">Magni Dolores</a></h4>
-          <p class="service-description">Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-road"></i></div>
-          <h4 class="service-title"><a href="">Nemo Enim</a></h4>
-          <p class="service-description">At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque</p>
-        </div>
-        <div class="col-md-4 service-item">
-          <div class="service-icon"><i class="fa fa-shopping-bag"></i></div>
-          <h4 class="service-title"><a href="">Eiusmod Tempor</a></h4>
-          <p class="service-description">Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Subscrbe Section
-  ============================-->
-  <section id="subscribe">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-8">
-          <h3 class="subscribe-title">Subscribe For Updates</h3>
-          <p class="subscribe-text">Join our 1000+ subscribers and get access to the latest tools, freebies, product announcements and much more!</p>
-        </div>
-        <div class="col-md-4 subscribe-btn-container">
-          <a class="subscribe-btn" href="#">Subscribe Now</a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Porfolio Section
-  ============================-->
-  <section id="portfolio">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Portfolio</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Si stante, hoc natura videlicet vult, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-1.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 1</h4>
-              <span>Alored dono par</span>
+    <!--/ Banner-->
+    <!--Feature-->
+    <section id="feature" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="header-section text-center">
+                    <h2>CARACTERISTICAS DEL SISTEMA</h2>
+                    <hr class="bottom-line">
+                </div>
+                <div class="feature-info">
+                    <div class="fea">
+                        <div class="col-md-4">
+                            <div class="heading pull-right">
+                                <h4>Examens</h4>
+                                <p>Los examnes los podra realizarlos en linea usted podra obtener los resultados al instante sin tener que estar haciedo los calculos ademas que el alumno podra ver los resultados de label prueba </p>
+                            </div>
+                            <div class="fea-img pull-left">
+                                <i class="fa fa-edit"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fea">
+                        <div class="col-md-4">
+                            <div class="heading pull-right">
+                                <h4>Foros</h4>
+                                <p>Tiene la posibilidad de crear foros para que los estudiantes y el docente interactuen sobre un tema que el docente elija
+                                </p>
+                            </div>
+                            <div class="fea-img pull-left">
+                                <i class="fa fa-commenting"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fea">
+                        <div class="col-md-4">
+                            <div class="heading pull-right">
+                                <h4>Ejercicios y otros</h4>
+                                <p>Tine la posibilidad de poder poner ejercicios para los estudiantes practiquen .
+                                </p>
+                            </div>
+                            <div class="fea-img pull-left">
+                                <i class="fa fa-book"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </a>
         </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-2.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 2</h4>
-              <span>Alored dono par</span>
+    </section>
+    <!--/ feature-->
+    <!--Organisations-->
+    <section id="organisations" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="orga-stru">
+                            <h3>65%</h3>
+                            <p>Examenes!!</p>
+                            <i class="fa fa-male"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="orga-stru">
+                            <h3>20%</h3>
+                            <p>Exposiciones!!</p>
+                            <i class="fa fa-male"></i>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
+                        <div class="orga-stru">
+                            <h3>15%</h3>
+                            <p>Tareas!!</p>
+                            <i class="fa fa-male"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="detail-info">
+                        <hgroup>
+                            <h3 class="det-txt">Asignacion de puntos como Examenes Tareas Exposiciones</h3>
+                            <h4 class="sm-txt"></h4>
+                        </hgroup>
+                        <p class="det-p">Puede realizar asignacion de puntos a cada tarea evaluacion o exposicion que el docente defina </p>
+                    </div>
+                </div>
             </div>
-          </a>
         </div>
+    </section>
+    <!--/ Organisations-->
 
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-3.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 3</h4>
-              <span>Alored dono par</span>
+    <!--work-shop-->
+    <section id="work-shop" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="header-section text-center">
+                    <h2>Evaluaciones</h2>
+                    <hr class="bottom-line">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-box text-center">
+                        <div class="icon-box">
+                            <i class="fa fa-edit"></i>
+                        </div>
+                        <div class="icon-text">
+                            <h4 class="ser-text">Examenes</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-box text-center">
+                        <div class="icon-box">
+                            <i class="fa fa-pencil"></i>
+                        </div>
+                        <div class="icon-text">
+                            <h4 class="ser-text">Remasos</h4>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="service-box text-center">
+                        <div class="icon-box">
+                            <i class="fa fa-pencil-square"></i>
+                        </div>
+                        <div class="icon-text">
+                            <h4 class="ser-text">Examenes Sorpresa</h4>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </a>
         </div>
+    </section>
+    <!--/ work-shop-->
 
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-4.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 4</h4>
-              <span>Alored dono par</span>
+    <!--Courses-->
+    <section id="courses" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="header-section text-center">
+                    <h2>Aulas</h2>
+
+                    <hr class="bottom-line">
+                </div>
             </div>
-          </a>
         </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="{{URL::to('assets/Mentor/img/aula1.jpg')}}" class="img-responsive">
+                        <figcaption>
+                            <h3>LABORATORIO</h3>
 
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-5.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 5</h4>
-              <span>Alored dono par</span>
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="{{URL::to('assets/Mentor/img/aula2.jpg')}}" class="img-responsive">
+                        <figcaption>
+                            <h3>AULA EDIFICIO NUEVO</h3>
+
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="{{URL::to('assets/Mentor/img/aula3.jpg')}}" class="img-responsive">
+                        <figcaption>
+                            <h3>LABORATORIO</h3>
+
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="{{URL::to('assets/Mentor/img/aula4.jpg')}}" class="img-responsive">
+                        <figcaption>
+                            <h3>AULA 615</h3>
+
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="{{URL::to('assets/Mentor/img/aula5.jpg')}}" class="img-responsive">
+                        <figcaption>
+                            <h3>AULA 623</h3>
+
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
+                <div class="col-md-4 col-sm-6 padleft-right">
+                    <figure class="imghvr-fold-up">
+                        <img src="{{URL::to('assets/Mentor/img/aula6.jpg')}}" class="img-responsive">
+                        <figcaption>
+                            <h3>AULA EDIFICIO NUEVO</h3>
+
+                        </figcaption>
+                        <a href="#"></a>
+                    </figure>
+                </div>
             </div>
-          </a>
         </div>
+    </section>
+    <!--/ Courses-->
 
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-6.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 6</h4>
-              <span>Alored dono par</span>
+    <!--Contact
+    <section id="contact" class="section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="header-section text-center">
+                    <h2>Contact Us</h2>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Exercitationem nesciunt vitae,<br> maiores, magni dolorum aliquam.</p>
+                    <hr class="bottom-line">
+                </div>
+                <div id="sendmessage">Your message has been sent. Thank you!</div>
+                <div id="errormessage"></div>
+                <form action="" method="post" role="form" class="contactForm">
+                    <div class="col-md-6 col-sm-6 col-xs-12 left">
+                        <div class="form-group">
+                            <input type="text" name="name" class="form-control form" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
+                            <div class="validation"></div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-sm-6 col-xs-12 right">
+                        <div class="form-group">
+                            <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
+                            <div class="validation"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-xs-12">
+                    
+                        <button type="submit" id="submit" name="submit" class="form contact-form-button light-form-button oswald light">SEND EMAIL</button>
+                    </div>
+                </form>
+
             </div>
-          </a>
         </div>
-
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-7.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 7</h4>
-              <span>Alored dono par</span>
+    </section>-->
+    <!--/ Contact-->
+    <!--Footer-->
+    <footer id="footer" class="footer">
+        <div class="container text-center">
+            Cochabamba - Bolivia
+            <div class="credits">
+                <!--a href="https://bootstrapmade.com/">BootstrapMade.com</a-->
             </div>
-          </a>
         </div>
+    </footer>
+    <!--/ Footer-->
 
-        <div class="col-md-3">
-          <a class="portfolio-item" style="background-image: url(img/portfolio-8.jpg);" href="">
-            <div class="details">
-              <h4>Portfolio 8</h4>
-              <span>Alored dono par</span>
-            </div>
-          </a>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Testimonials Section
-  ============================-->
-  <section id="testimonials">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Testimonials</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Erdo lide, nora porodo filece, salvam esse se, quod concedimus ses haec dicturum fuisse</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3">
-          <div class="profile">
-            <div class="pic"><img src="img/client-1.jpg" alt=""></div>
-            <h4>Saul Goodman</h4>
-            <span>Lawless Inc</span>
-          </div>
-        </div>
-        <div class="col-md-9">
-          <div class="quote">
-            <b><img src="img/quote_sign_left.png" alt=""></b> Proin iaculis purus consequat sem cure digni ssim donec porttitora entum suscipit rhoncus. Accusantium quam, ultricies eget id, aliquam eget nibh et. Maecen aliquam, risus at semper. <small><img src="img/quote_sign_right.png" alt=""></small>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-9">
-          <div class="quote">
-            <b><img src="img/quote_sign_left.png" alt=""></b> Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis architecto beatae. <small><img src="img/quote_sign_right.png" alt=""></small>
-          </div>
-        </div>
-        <div class="col-md-3">
-          <div class="profile">
-            <div class="pic"><img src="img/client-2.jpg" alt=""></div>
-            <h4>Sara Wilsson</h4>
-            <span>Odeo Inc</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!--==========================
-  Team Section
-  ============================-->
-  <section id="team">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Our Team</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-1.jpg" alt=""></div>
-            <h4>Walter White</h4>
-            <span>Chief Executive Officer</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-2.jpg" alt=""></div>
-            <h4>Sarah Jhinson</h4>
-            <span>Product Manager</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-3.jpg" alt=""></div>
-            <h4>William Anderson</h4>
-            <span>CTO</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-3">
-          <div class="member">
-            <div class="pic"><img src="img/team-4.jpg" alt=""></div>
-            <h4>Amanda Jepson</h4>
-            <span>Accountant</span>
-            <div class="social">
-              <a href=""><i class="fa fa-twitter"></i></a>
-              <a href=""><i class="fa fa-facebook"></i></a>
-              <a href=""><i class="fa fa-google-plus"></i></a>
-              <a href=""><i class="fa fa-linkedin"></i></a>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Contact Section
-  ============================-->
-  <section id="contact">
-    <div class="container wow fadeInUp">
-      <div class="row">
-        <div class="col-md-12">
-          <h3 class="section-title">Contact Us</h3>
-          <div class="section-title-divider"></div>
-          <p class="section-description">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-3 col-md-push-2">
-          <div class="info">
-            <div>
-              <i class="fa fa-map-marker"></i>
-              <p>A108 Adam Street<br>New York, NY 535022</p>
-            </div>
-
-            <div>
-              <i class="fa fa-envelope"></i>
-              <p>info@example.com</p>
-            </div>
-
-            <div>
-              <i class="fa fa-phone"></i>
-              <p>+1 5589 55488 55s</p>
-            </div>
-
-          </div>
-        </div>
-
-        <div class="col-md-5 col-md-push-2">
-          <div class="form">
-            <div id="sendmessage">Your message has been sent. Thank you!</div>
-            <div id="errormessage"></div>
-            <form action="" method="post" role="form" class="contactForm">
-              <div class="form-group">
-                <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" data-rule="minlen:4" data-msg="Please enter at least 4 chars" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="email" class="form-control" name="email" id="email" placeholder="Your Email" data-rule="email" data-msg="Please enter a valid email" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <input type="text" class="form-control" name="subject" id="subject" placeholder="Subject" data-rule="minlen:4" data-msg="Please enter at least 8 chars of subject" />
-                <div class="validation"></div>
-              </div>
-              <div class="form-group">
-                <textarea class="form-control" name="message" rows="5" data-rule="required" data-msg="Please write something for us" placeholder="Message"></textarea>
-                <div class="validation"></div>
-              </div>
-              <div class="text-center"><button type="submit">Send Message</button></div>
-            </form>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!--==========================
-  Footer
-============================-->
-  <footer id="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="copyright">
-            &copy; Copyright <strong>Imperial Theme</strong>. All Rights Reserved
-          </div>
-          <div class="credits">
-            <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=Imperial
-            -->
-            Bootstrap Templates by <a href="https://bootstrapmade.com/">BootstrapMade</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- #footer -->
-
-  <a href="#" class="back-to-top"><i class="fa fa-chevron-up"></i></a>
-
-  <!-- Required JavaScript Libraries -->
-  <script src="{{URL::to('assets/Imperial/lib/jquery/jquery.min.js')}}"></script>
-  <script src="{{URL::to('assets/Imperial/lib/bootstrap/js/bootstrap.min.js')}}"></script>
-  <script src="{{URL::to('assets/Imperial/lib/superfish/hoverIntent.js')}}"></script>
-  <script src="{{URL::to('assets/Imperial/lib/superfish/superfish.min.js')}}"></script>
-  <script src="{{URL::to('assets/Imperial/lib/morphext/morphext.min.js')}}"></script>
-  <script src="{{URL::to('assets/Imperial/lib/wow/wow.min.js')}}"></script>
-  <script src="{{URL::to('assets/Imperial/lib/stickyjs/sticky.js')}}"></script>
-  <script src="{{URL::to('assets/Imperial/lib/easing/easing.js')}}"></script>
-
-  <!-- Template Specisifc Custom Javascript File -->
-  <script src="{{URL::to('assets/Imperial/js/custom.js')}}"></script>
-
-  <script src="{{URL::to('assets/Imperial/contactform/contactform.js')}}"></script>
-
+    <script src="{{URL::to('assets/Mentor/js/jquery.min.js')}}"></script>
+    <script src="{{URL::to('assets/Mentor/js/jquery.easing.min.js')}}"></script>
+    <script src="{{URL::to('assets/Mentor/js/bootstrap.min.js')}}"></script>
+    <script src="{{URL::to('assets/Mentor/js/custom.js')}}"></script>
+    <script src="{{URL::to('assets/Mentor/contactform/contactform.js')}}"></script>
 
 </body>
 
